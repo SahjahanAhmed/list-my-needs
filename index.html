@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="settings-card.css">
+    <link rel="stylesheet" href="todo-app-settings.css">
+    <link rel="stylesheet" href="utils.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="script.js"></script>
+    <script defer src="mode-theme.js"></script>
+    <title>List My Needs</title>
+</head>
+
+<body>
+    <div class="todo-app-title-div">
+        <div class="todo-app-settings">
+            <div class="theme">
+                <label for="select-theme">Theme</label>
+                <select id="select-theme">
+                    <option class="theme-option-1" value="default" selected>Default</option>
+                    <option class="theme-option-2" value="dark">Dark</option>
+                    <option class="theme-option-3" value="light">Light</option>
+                </select>
+            </div>
+            <div class="mode">
+                <label for="select-mode">Mode</label>
+                <select id="select-mode">
+                    <option class="option1" value="dekstop">Dekstop</option>
+                    <option class="option2" value="tablet">Tablet</option>
+                    <option class="option3" value="mobile">Mobile</option>
+                </select>
+            </div>
+            <div class="selected-todos-operation">
+                <div class="selected-todos-delete">
+                    <button class="btn"><i class="fa fa-trash"></i></button>
+                </div>
+                <div class="selected-todos-edit">
+                    <button class="btn"><i class="fa fa-edit"></i></button>
+                </div>
+                <div class="selected-todos-customize">
+                    <button class="btn"><i class="fa fa-gear"></i></button>
+                </div>
+                <div class="selected-todos-highlight">
+                    <button class="btn"><i class="fa fa-highlighter"></i></button>
+                </div>
+
+            </div>
+
+        </div>
+        <h1>List My Needs</h1>
+
+    </div>
+    <div class="todo-app-container">
+
+        <div class="todo-app-container-top">
+            <form class="form" id="form">
+                <input type="text" class="input" id="input" autocomplete="off" placeholder="Write your todo here..."
+                    required>
+                <button type="submit" class="add-todo-btn" id="add-todo-btn">Add Todo</button>
+            </form>
+        </div>
+
+
+        <div class="todo-app-container-bottom">
+            <ul class="todo-list" id="todo-list"></ul>
+        </div>
+        <!-- settings div -->
+        <div class="setting-div">
+            <button class="setting" id="setting">
+                <i class="fa fa-gear"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- highlight card -->
+    <div class="selected-todo-highlight-card highlight-card-hide">
+        <div class="top">
+            <button class="back-from-highlight-card-btn"><i class="fa fa-arrow-left"></i></button>
+            <h3 class="highlight-your-selected-todos">Highlight your selected todos</h3>
+            <button class="save-highlight-card-btn">Save highlight</button>
+            <button class="save-unhighlight-card-btn">Save unhighlight</button>
+        </div>
+        <div class="bottom">
+            <label for="preference">How do you want your selected todo to be highlighted <i
+                    class="fa fa-arrow-turn-down"></i></label>
+            <div id="preference">
+                <div>
+                    <input type="radio" name="how-highlighted" id="1">
+                    <label class="highlight-h2" for="1">
+                        <h2>i am highlighted</h2>
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name="how-highlighted" id="2">
+                    <label for="2">
+                        <h3>i am highlighted</h3>
+                    </label>
+                </div>
+                <div>
+                    <input type="radio" name="how-highlighted" id="3">
+                    <label for="3">
+                        <h4>i am highlighted</h4>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="will-be-selected-div">
+            <h4>do you want your these selected todos to be unselected after save?</h4>
+            <div>
+                <div>
+                    <input type="radio" name="will-be-unselect?" id="will-be-unselect?yes">
+                    <label for="will-be-unselect?yes">Yes</label>
+                </div>
+                <div>
+                    <input type="radio" name="will-be-unselect?" id="will-be-unselect?no">
+                    <label for="will-be-unselect?no">No</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- edit card -->
+    <div class="selected-todo-edit-card">
+        <div>
+            <h2>Edit your selected todo</h2>
+            <button id="selected-todo-edit-save-btn" class="btn">Save</button>
+            <button class="btn" id="back">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+        </div>
+        <div>
+            <textarea required class="selected-todo-edit-card-textarea">
+                </textarea>
+        </div>
+    </div>
+
+    <div class="settings-card settings-card-hide">
+        <div class="settings-card-top">
+            <button class="left-arrow-btn"><i class="fa fa-arrow-left"></i></button>
+            <button class="customize-save-btn">Save</button>
+            <h3>Customize your todos</h3>
+        </div>
+        <div class="settings-card-container">
+
+            <div>
+                <label for="select-font-color">Font Color</label>
+                <select id="select-font-color">
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="pink">Pink</option>
+                    <option value="purple">Purple</option>
+                    <option value="orange">Orange</option>
+                </select>
+            </div>
+            <div>
+                <label for="select-font-size">Font Size</label>
+                <select id="select-font-size">
+                    <option value="16px">Normal</option>
+                    <option value="12px">12px</option>
+                    <option value="14px">14px</option>
+                    <option value="16px">16px</option>
+                    <option value="18px">18px</option>
+                    <option value="20px">20px</option>
+                    <option value="22px">22px</option>
+                    <option value="24px">24px</option>
+                </select>
+            </div>
+        </div>
+        <div class="settings-card-container2">
+            <label for="text-appear">Your text will appear like this
+                <i class="fa fa-arrow-turn-down"></i>
+            </label>
+            <p id="text-appear">
+                Hi, i am your text.
+                And this is how i look.
+                Thanks
+            </p>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
